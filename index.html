@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>40 万落地 · 纯电 SUV 选购结论（2026.11）</title>
+<style>
+  :root{
+    --paper:#F7F5F1; --ink:#15171A; --ink-2:#3C4147; --mute:#6F7479;
+    --line:#E1DCD4; --line-2:#CFC8BE;
+    --red:#C8452A; --teal:#145C57; --amber:#B07A12;
+    --card:#FFFFFF;
+    --shadow:0 1px 2px rgba(20,22,26,.05), 0 8px 24px rgba(20,22,26,.05);
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-font-smoothing:antialiased;}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC","Microsoft YaHei",sans-serif;
+    font-size:15px;line-height:1.75;letter-spacing:.01em;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 40px;}
+
+  .hero{background:var(--ink);color:#F2EFEA;padding:60px 0 52px;position:relative;overflow:hidden;}
+  .hero:after{content:"";position:absolute;right:-140px;top:-140px;width:460px;height:460px;
+    background:radial-gradient(circle,rgba(200,69,42,.22),transparent 68%);}
+  .hero .kicker{font-size:12px;letter-spacing:.22em;color:#9A958C;margin-bottom:18px;}
+  .hero h1{font-size:40px;line-height:1.3;margin:0 0 14px;font-weight:600;letter-spacing:-.01em;max-width:900px;}
+  .hero h1 em{font-style:normal;color:#E0714F;}
+  .hero .sub{font-size:15px;color:#B9B4AC;max-width:800px;margin:0 0 36px;}
+  .pills{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1;}
+  .pill{border:1px solid rgba(242,239,234,.22);padding:9px 15px;font-size:12.5px;color:#D8D3CA;letter-spacing:.02em;}
+  .pill b{color:#F2EFEA;font-weight:600;}
+
+  section{padding:60px 0 8px;}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:14px;margin-bottom:30px;}
+  .sec-no{font-size:12px;letter-spacing:.18em;color:var(--red);font-weight:600;white-space:nowrap;}
+  .sec-head h2{font-size:26px;margin:0;font-weight:600;letter-spacing:-.01em;}
+  .sec-head .note{font-size:13px;color:var(--mute);margin-left:auto;text-align:right;}
+
+  h3{font-size:18px;font-weight:600;margin:34px 0 12px;}
+  h3 .dot{display:inline-block;width:6px;height:6px;background:var(--red);border-radius:50%;vertical-align:middle;margin-right:9px;transform:translateY(-2px);}
+  p{margin:0 0 14px;color:var(--ink-2);}
+  .lead{font-size:16.5px;line-height:1.85;}
+
+  .callout{background:#FFF9F0;border:1px solid #EADCC4;border-left:3px solid var(--amber);
+    padding:18px 22px;font-size:13.5px;color:#5E4A28;margin:20px 0;line-height:1.75;}
+  .callout b{color:#3E3015;}
+  .callout.blue{background:#EFF5F4;border-color:#C7DAD7;border-left-color:var(--teal);color:#204B47;}
+  .callout.blue b{color:#123A36;}
+
+  .verdicts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .vc{background:var(--card);border:1px solid var(--line);padding:22px;box-shadow:var(--shadow);}
+  .vc .no{font-size:11px;letter-spacing:.2em;color:var(--mute);margin-bottom:10px;}
+  .vc h4{margin:0 0 10px;font-size:17px;font-weight:600;line-height:1.5;}
+  .vc p{margin:0;font-size:13.5px;line-height:1.8;}
+  .vc .hi{color:var(--red);font-weight:600;}
+
+  .tbl-wrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);margin:8px 0 6px;}
+  table{border-collapse:collapse;width:100%;font-size:12.8px;line-height:1.6;min-width:780px;}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #EDE8E1;vertical-align:top;}
+  thead th{background:#EFEAE3;font-weight:600;font-size:12px;letter-spacing:.02em;}
+  tbody tr:nth-child(even){background:#FBF9F6;}
+  td.num,th.num{font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .grp td{background:#E8E2D9 !important;font-weight:600;letter-spacing:.06em;font-size:11.5px;color:var(--ink-2);padding:7px 12px;}
+  .dim{color:var(--mute);}
+  .hl{color:var(--red);font-weight:600;}
+  .hl-t{color:var(--teal);font-weight:600;}
+  td.warn{color:#9B4B12;font-weight:600;}
+  .tag-mini{display:inline-block;font-size:10.5px;padding:1px 6px;border:1px solid var(--line-2);border-radius:2px;color:var(--mute);margin-left:4px;vertical-align:1px;}
+  .src-note{font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.7;}
+
+  /* ranking */
+  .rank{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);background:var(--card);box-shadow:var(--shadow);}
+  .rk{display:grid;grid-template-columns:60px 1fr 168px 172px;gap:0;border-bottom:1px solid #EDE8E1;}
+  .rk:last-child{border-bottom:0;}
+  .rk .no{display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:600;color:var(--line-2);
+    border-right:1px solid #EDE8E1;font-variant-numeric:tabular-nums;}
+  .rk.top .no{color:var(--red);}
+  .rk .body{padding:18px 20px;}
+  .rk .body .nm{font-size:17px;font-weight:600;margin-bottom:3px;}
+  .rk .body .nm span{font-size:12px;color:var(--mute);font-weight:400;margin-left:8px;}
+  .rk .body .why{font-size:12.8px;color:var(--ink-2);line-height:1.75;}
+  .rk .price{padding:18px 16px;border-left:1px solid #EDE8E1;font-size:12.5px;color:var(--mute);line-height:1.8;}
+  .rk .price b{display:block;font-size:18px;color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums;}
+  .rk .score{padding:18px 14px;border-left:1px solid #EDE8E1;font-size:11.5px;color:var(--ink-2);line-height:1.75;}
+  .rk .score i{font-style:normal;color:var(--mute);display:inline-block;width:46px;}
+  .rk .score div{white-space:nowrap;}
+
+  .dots{letter-spacing:1.5px;color:var(--teal);}
+  .dots .off{color:#D8D2C8;}
+
+  /* top picks */
+  .pick{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);margin-bottom:20px;}
+  .pick-h{display:flex;align-items:baseline;gap:14px;padding:22px 26px 14px;border-bottom:1px solid var(--line);}
+  .pick-h .badge{font-size:11px;letter-spacing:.16em;color:#FFF;background:var(--red);padding:3px 8px;}
+  .pick-h h4{margin:0;font-size:20px;font-weight:600;}
+  .pick-h .pr{margin-left:auto;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;}
+  .pick-h .pr small{font-size:12px;color:var(--mute);font-weight:400;margin-left:4px;}
+  .pick-b{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+  .pb{padding:20px 26px;}
+  .pb + .pb{border-left:1px solid var(--line);}
+  .pb .t{font-size:11.5px;letter-spacing:.14em;color:var(--mute);margin-bottom:8px;}
+  .pb p{font-size:13.2px;margin:0 0 10px;line-height:1.8;}
+  .pb ul{margin:0;padding-left:0;list-style:none;}
+  .pb li{font-size:12.8px;color:var(--ink-2);line-height:1.8;padding-left:14px;position:relative;}
+  .pb li:before{content:"·";position:absolute;left:2px;color:var(--teal);}
+  .pb.give li:before{color:var(--red);}
+  .pick-f{background:#FAF7F2;border-top:1px solid var(--line);padding:14px 26px;font-size:12.8px;color:#8C4A10;line-height:1.75;}
+
+  /* move table */
+  .mv{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .mvc{background:var(--card);border:1px solid var(--line);padding:22px;box-shadow:var(--shadow);border-top:3px solid var(--line-2);}
+  .mvc.up{border-top-color:var(--teal);}
+  .mvc.down{border-top-color:var(--red);}
+  .mvc.out{border-top-color:#8A8F94;}
+  .mvc .tag{font-size:11px;letter-spacing:.16em;font-weight:600;margin-bottom:8px;}
+  .mvc.up .tag{color:var(--teal);}
+  .mvc.down .tag{color:var(--red);}
+  .mvc.out .tag{color:#8A8F94;}
+  .mvc h4{margin:0 0 4px;font-size:17px;font-weight:600;}
+  .mvc .pos{font-size:12px;color:var(--mute);margin-bottom:12px;}
+  .mvc p{font-size:12.8px;line-height:1.8;margin:0 0 10px;}
+  .mvc .k{font-size:12px;color:var(--ink-2);background:#F6F3EE;padding:8px 12px;line-height:1.7;}
+
+  .closing{background:var(--ink);color:#EDE9E2;padding:54px 0 58px;margin-top:56px;}
+  .closing .kicker{font-size:11px;letter-spacing:.22em;color:#8F8A82;margin-bottom:16px;}
+  .closing h2{font-size:26px;margin:0 0 22px;font-weight:600;color:#F5F2EC;}
+  .closing .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+  .closing .item{border-top:1px solid rgba(245,242,236,.18);padding-top:16px;}
+  .closing .item .t{font-size:13px;color:#C8452A;font-weight:600;margin-bottom:8px;letter-spacing:.05em;}
+  .closing .item p{font-size:13.5px;color:#BDB8B0;margin:0;line-height:1.85;}
+
+  .sources{columns:2;column-gap:40px;font-size:11.8px;color:var(--mute);line-height:1.9;}
+  .sources p{font-size:11.8px;color:var(--mute);margin:0 0 6px;break-inside:avoid;}
+  .sources b{color:var(--ink-2);font-weight:600;}
+  footer{padding:32px 0 60px;font-size:11.5px;color:var(--mute);border-top:1px solid var(--line-2);margin-top:36px;}
+
+  @media (max-width:900px){
+    .wrap{padding:0 22px;}
+    .hero h1{font-size:28px;}
+    .verdicts,.mv,.closing .grid{grid-template-columns:1fr;}
+    .pick-b{grid-template-columns:1fr;}
+    .pb + .pb{border-left:0;border-top:1px solid var(--line);}
+    .rk{grid-template-columns:48px 1fr;}
+    .rk .price,.rk .score{grid-column:1 / -1;border-left:0;border-top:1px solid #EDE8E1;}
+    .sources{columns:1;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">PURE-EV SUV / ≤40万落地 / 2026.11</div>
+    <h1>40 万落地，纯电 SUV：<br><em>预算不是筛子，性价比才是</em></h1>
+    <p class="sub">把落地价放宽到 40 万，并不意味着要买更贵的车——而是意味着你几乎可以买到任何一台主流纯电 SUV，然后在同一张桌子上按"每块钱买到多少能力"来排。结论先说：这个预算下最值得买的三台，落地价分别是 27.2 万、25.8 万、33.2 万，没有一台顶到 40 万。</p>
+    <div class="pills">
+      <div class="pill">已核实口径：<b>2026-11-09</b></div>
+      <div class="pill">价格：<b>落地价</b>（裸车+购置税+保险）</div>
+      <div class="pill">纯电优先，<b>增程/插混不参与主推荐</b></div>
+      <div class="pill">四驱不作为加分项</div>
+      <div class="pill">主表 <b>6 台</b>，另有 6 台给出淘汰理由</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- 00 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-no">00 / 先校正两件事</span>
+    <h2>一个品牌名，一个预算口径</h2>
+  </div>
+
+  <div class="callout blue">
+    <b>你说的"智界 H5"，品牌要校正一下：</b>智界（Luxeed）是华为＋奇瑞，旗下没有 H5；鸿蒙智行里叫 H5 的是<b>尚界 H5</b>（华为＋上汽）。到店看车请直接说"尚界"，否则会被带到另一个品牌。如果你其实想的是 <b>25 万级的智界 R7</b>（纯电轿跑 SUV，长续航版 CLTC 855km），那是另一台车，我在 02 节的淘汰名单里写了它为什么没进主表——主线结论不受影响。
+  </div>
+
+  <div class="callout">
+    <b>预算口径：</b>你给的是"落地 40 万"，我全部按落地算（裸车 + 购置税 + 保险 + 上牌杂费）。按 2026–2027 年新能源购置税减半、单车减免上限 1.5 万元测算，<b>40 万落地对应的裸车上限约 37.5 万元</b>（超过 33.9 万后购置税已撞上限，固定 1.5 万）。如果你的 40 万其实是"裸车价"，那候选还能上探到 i8 Ultra（36.98 万）、ES6 高配（35–37 万），但结论不变——那几台都不是性价比最优解。
+  </div>
+
+  <div class="verdicts">
+    <div class="vc">
+      <div class="no">结论 01</div>
+      <h4>三台首选：<span class="hi">YU7 长续航 / 海狮 08 EV 900 / i8 后驱</span></h4>
+      <p>落地分别约 27.2 万、25.8 万、33.2 万。三台车分别解决三个不同问题：五座全能、25 万内硬件密度、六座舒适上限。除此以外没有第四种需求需要被满足。</p>
+    </div>
+    <div class="vc">
+      <div class="no">结论 02</div>
+      <h4>原三台里，<span class="hi">海狮 08 升、i8 降、L05 退出主表</span></h4>
+      <p>增程/插混被排除后，L05 只剩 4 个纯电版（6 款里 2 款增程出局）、海狮只剩 4 个 EV 版。海狮 EV 成了全池"最低价的 1000V＋空悬＋终身三电"；i8 从"唯一六座纯电"变成"六座里的贵选项"；L05 则降到 18 万以下档，与尚界 H5 正面竞争。</p>
+    </div>
+    <div class="vc">
+      <div class="no">结论 03</div>
+      <h4>真正被淘汰的是<span class="hi">版本和路线，不是整车</span></h4>
+      <p>L05 增程、海狮 DM-i、尚界 H5 增程在"纯电优先"下直接出局；版本层面 L05 560 Plus、i8 Pro（128 TOPS）、i8 2025 Ultra（贵 3 万同硬件）不要买。整车层面，唐 L EV 已停产清库存、ES6 同价位被 i8 压制。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 01 落地 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-no">01 / 预算校验</span>
+    <h2>40 万落地，到底卡住了谁</h2>
+    <span class="note">购置税按减半、上限 1.5 万测算；保险为估算</span>
+  </div>
+
+  <p class="lead">先算清账：<b>40 万落地几乎不排除任何一台主流纯电 SUV</b>。表里最贵的 i8 四驱高性能，落地也只有 36.4 万；连 ES6 买断版都进得来。这意味着预算不承担筛选功能，真正的筛选器是"这台车在你的使用条件下，每一分钱有没有被兑现"。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>车型 / 版本</th><th class="num">裸车价</th><th class="num">购置税</th><th class="num">保险（估算）</th><th class="num">上牌杂费</th><th class="num">落地估算</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr class="grp"><td colspan="7">主表 6 台</td></tr>
+        <tr><td>海狮 08 EV 900 五座尊荣</td><td class="num">23.99</td><td class="num">1.06</td><td class="num">0.65–0.75</td><td class="num">0.05</td><td class="num hl-t">25.7–25.9</td><td>无现金优惠，正价销售</td></tr>
+        <tr><td>极氪 7X 103kWh 后驱 Max</td><td class="num">24.98</td><td class="num">1.11</td><td class="num">0.65–0.75</td><td class="num">0.05</td><td class="num">26.8–26.9</td><td>终端报价 23.2 万起，可再降约 1.8 万</td></tr>
+        <tr><td>小米 YU7 长续航版</td><td class="num">25.35</td><td class="num">1.12</td><td class="num">0.65–0.75</td><td class="num">0.05</td><td class="num hl-t">27.2–27.3</td><td>无公开现金优惠，交付 7–10 周</td></tr>
+        <tr><td>小鹏 G9 725 Max</td><td class="num">25.88</td><td class="num">1.15</td><td class="num">0.65–0.75</td><td class="num">0.05</td><td class="num">27.7–27.8</td><td>10 月权益含 1.2 万补贴，权益后落地约 26.0</td></tr>
+        <tr><td>乐道 L90 六座 Pro（买断）</td><td class="num">26.58</td><td class="num">1.18</td><td class="num">0.7–0.8</td><td class="num">0.05</td><td class="num">28.4–28.5</td><td>BaaS 车价 17.98 万 + 899 元/月</td></tr>
+        <tr><td>理想 i8 2026 后驱长续航</td><td class="num">30.98</td><td class="num">1.37</td><td class="num">0.8–0.9</td><td class="num">0.05</td><td class="num hl">33.2–33.3</td><td>无现金减免；四驱版 33.98 → 落地 36.4</td></tr>
+
+        <tr class="grp"><td colspan="7">低预算档（不参与主排序，见 05 节）</td></tr>
+        <tr><td>小鹏 MONA L05 635 Max</td><td class="num">15.98</td><td class="num">0.71</td><td class="num">0.5–0.6</td><td class="num">0.05</td><td class="num">17.3–17.4</td><td>权益价，截止 2026-12-15</td></tr>
+        <tr><td>尚界 H5 纯电 Pro 长续航</td><td class="num">17.98</td><td class="num">0.80</td><td class="num">0.55–0.65</td><td class="num">0.05</td><td class="num">19.4–19.5</td><td>无激光雷达、无城市 NCA</td></tr>
+        <tr><td>尚界 H5 纯电 Max+ 长续航</td><td class="num">19.98</td><td class="num">0.88</td><td class="num">0.6–0.7</td><td class="num">0.05</td><td class="num">21.6–21.7</td><td>+ 城市 NCA 高阶包（约 2 万级 / 3.2 万两套口径）→ 23.5–24.7</td></tr>
+
+        <tr class="grp"><td colspan="7">落选（每台都有明确淘汰理由）</td></tr>
+        <tr><td>智界 R7 纯电 Max+ 长续航</td><td class="num">28.98</td><td class="num">1.28</td><td class="num">0.7–0.8</td><td class="num">0.05</td><td class="num">31.1–31.2</td><td>+ 城市 NCA 高阶包 3.2–3.6 万 → 34.4–34.8；空悬仅 Ultra 标配</td></tr>
+        <tr><td>特斯拉 Model Y 长续航后驱</td><td class="num">28.85</td><td class="num">1.28</td><td class="num">0.7–0.8</td><td class="num">0.05</td><td class="num">30.9–31.0</td><td>400V、无空悬、无激光雷达；FSD 另付 6.4 万</td></tr>
+        <tr><td>蔚来 ES6（100kWh 买断）</td><td class="num">33.80</td><td class="num">1.50</td><td class="num">0.8–0.9</td><td class="num">0.05</td><td class="num">36.2–36.3</td><td>无空悬；NAD 订阅 680 元/月</td></tr>
+        <tr><td>比亚迪唐 L EV 670 后驱旗舰</td><td class="num">25.98</td><td class="num">1.15</td><td class="num">0.7–0.8</td><td class="num">0.05</td><td class="num">27.9–28.0</td><td class="warn">已停产清库存（2026-06 起门店停止订车）</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src-note">购置税 = 裸车价 ÷ 1.13 × 10% × 50%，减免额上限 1.5 万元，以发票价为准。保险为估算区间（12 台车的公开保险报价均未查到，属数据缺口），实际以保险公司报价为准。极氪 7X 终端让利与 G9 权益未计入"裸车价"列，备注中单列。</p>
+</section>
+
+<!-- 02 排序 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-no">02 / 排序</span>
+    <h2>六台进主表，六台给淘汰理由</h2>
+    <span class="note">排序规则：不可替代性 × 单位价格能力</span>
+  </div>
+
+  <p class="lead">排序不是按配置多少，而是按两条：<b>① 这台车有没有解决别人解决不了的问题；② 每一块钱买到的能力是否高于同价对手。</b>四驱没有被加分（你说可有可无），零百加速权重压到最低；续航真实性、补能速度、5–8 年的长期成本权重调高。</p>
+
+  <div class="rank">
+    <div class="rk top">
+      <div class="no">1</div>
+      <div class="body">
+        <div class="nm">小米 YU7 长续航版 <span>25.35 万 · 五座</span></div>
+        <div class="why">835km CLTC 且实测达成率 93.9%（全池最高）；Thor-U 700 TOPS + 1 颗激光雷达<b>全系标配</b>，HAD 终身免费随车；一年保值率 82.3%，纯电车型连续 4 个月第一。三项长期指标同时第一，且落在地板价区间。</div>
+      </div>
+      <div class="price">落地<b>27.2 万</b>交付 7–10 周</div>
+      <div class="score">
+        <div><i>续航</i><span class="dots">●●●●●</span></div>
+        <div><i>空间</i><span class="dots">●●●●<span class="off">●</span></span></div>
+        <div><i>智驾</i><span class="dots">●●●●●</span></div>
+        <div><i>底盘</i><span class="dots">●●●<span class="off">●●</span></span></div>
+        <div><i>长期</i><span class="dots">●●●●●</span></div>
+      </div>
+    </div>
+
+    <div class="rk top">
+      <div class="no">2</div>
+      <div class="body">
+        <div class="nm">比亚迪 海狮 08 EV 900 五座尊荣 <span>23.99 万 · 五座</span></div>
+        <div class="why">全池<b>最低价的 1000V 平台</b>（10–97% 约 9 分钟）+ 云辇-A 双腔空悬 + 后轮转向 ±7° + 900km + 首任三电终身。硬件密度除以价格，这台最高。后排与后备厢（943L）也是五座里最大的一档。</div>
+      </div>
+      <div class="price">落地<b>25.8 万</b>正价无优惠</div>
+      <div class="score">
+        <div><i>续航</i><span class="dots">●●●●●</span></div>
+        <div><i>空间</i><span class="dots">●●●●●</span></div>
+        <div><i>智驾</i><span class="dots">●●<span class="off">●●●</span></span></div>
+        <div><i>底盘</i><span class="dots">●●●●●</span></div>
+        <div><i>长期</i><span class="dots">●●●●<span class="off">●</span></span></div>
+      </div>
+    </div>
+
+    <div class="rk top">
+      <div class="no">3</div>
+      <div class="body">
+        <div class="nm">理想 i8 2026 后驱长续航 <span>30.98 万 · 六座</span></div>
+        <div class="why">六座里唯一同时做到 780km + 800V/5C（10–80% 约 11 分钟）+ 4,212 座自营超充（高速近 1,400 座）。三排能坐成人、二排右侧零重力、魔毯双腔空悬。它是"六座＋长途"这个组合目前的最优解。</div>
+      </div>
+      <div class="price">落地<b>33.2 万</b>无现金减免</div>
+      <div class="score">
+        <div><i>续航</i><span class="dots">●●●●<span class="off">●</span></span></div>
+        <div><i>空间</i><span class="dots">●●●<span class="off">●●</span></span></div>
+        <div><i>智驾</i><span class="dots">●●●●<span class="off">●</span></span></div>
+        <div><i>底盘</i><span class="dots">●●●●●</span></div>
+        <div><i>长期</i><span class="dots">●●●<span class="off">●●</span></span></div>
+      </div>
+    </div>
+
+    <div class="rk">
+      <div class="no">4</div>
+      <div class="body">
+        <div class="nm">乐道 L90 六座 Pro <span>26.58 万 · 六座/七座</span></div>
+        <div class="why">5,145mm / 3,110mm 轴距，28 万内唯一"真六座 + 空悬全系 + 900V + 换电 3 分钟"，前备舱 240L。但 85kWh 只有 600km CLTC，车主高速实测 370–400km（62–67%），且整车质保仅 4 年/10 万，是全池最短。</div>
+      </div>
+      <div class="price">落地<b>28.4 万</b>BaaS 17.98 万起</div>
+      <div class="score">
+        <div><i>续航</i><span class="dots">●●<span class="off">●●●</span></span></div>
+        <div><i>空间</i><span class="dots">●●●●●</span></div>
+        <div><i>智驾</i><span class="dots">●●●<span class="off">●●</span></span></div>
+        <div><i>底盘</i><span class="dots">●●●●●</span></div>
+        <div><i>长期</i><span class="dots">●●●<span class="off">●●</span></span></div>
+      </div>
+    </div>
+
+    <div class="rk">
+      <div class="no">5</div>
+      <div class="body">
+        <div class="nm">极氪 7X 103kWh 后驱 Max <span>24.98 万 · 五座</span></div>
+        <div class="why">802km + Thor-U 700 TOPS + 1 颗激光雷达 + 800V（约 11 分钟），终端让利约 1.8 万后可到 23.2 万裸车，一年保值率 72.5% 中型纯电 SUV 第一。短板是后驱 Max 无空悬、NVH 投诉集中。</div>
+      </div>
+      <div class="price">落地<b>26.8 万</b>终端可至 25.0</div>
+      <div class="score">
+        <div><i>续航</i><span class="dots">●●●●<span class="off">●</span></span></div>
+        <div><i>空间</i><span class="dots">●●●<span class="off">●●</span></span></div>
+        <div><i>智驾</i><span class="dots">●●●●●</span></div>
+        <div><i>底盘</i><span class="dots">●●●<span class="off">●●</span></span></div>
+        <div><i>长期</i><span class="dots">●●●●<span class="off">●</span></span></div>
+      </div>
+    </div>
+
+    <div class="rk">
+      <div class="no">6</div>
+      <div class="body">
+        <div class="nm">小鹏 G9 725 Max <span>25.88 万 · 五座</span></div>
+        <div class="why">26 万内唯一全系标配<b>双腔空悬 + CDC</b>，725km、800V（10–80% 最快 12 分钟）、图灵芯片 750 TOPS。但纯视觉无激光雷达、G9 是 2026-10 小改款样本尚小、车型级保值率无数据。</div>
+      </div>
+      <div class="price">落地<b>27.7 万</b>权益后约 26.0</div>
+      <div class="score">
+        <div><i>续航</i><span class="dots">●●●●<span class="off">●</span></span></div>
+        <div><i>空间</i><span class="dots">●●●●<span class="off">●</span></span></div>
+        <div><i>智驾</i><span class="dots">●●●●<span class="off">●</span></span></div>
+        <div><i>底盘</i><span class="dots">●●●●●</span></div>
+        <div><i>长期</i><span class="dots">●●●<span class="off">●●</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <h3><span class="dot"></span>落选的六台，各一句话说清为什么</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>车型</th><th>淘汰理由（具体到配置与价格）</th></tr></thead>
+      <tbody>
+        <tr><td>比亚迪 唐 L EV</td><td class="warn">2026-06 起全国门店停止新车订车，仅库存清仓，官网仍挂页面但属"尾货"。1000V + 100.5kWh/670km 的硬件并不弱，但<b>停产意味着后续 OTA 与配件周期不可控</b>，长期持有风险不可接受。</td></tr>
+        <tr><td>蔚来 ES6（33.8 万）</td><td>同价位（落地 36.2 万）被 i8 全面压制：ES6 <b>无空悬</b>、100kWh 只有 630–650km（车主市区实测约 480km）、NAD 完整版订阅 <b>680 元/月</b>（8 年 6.5 万）。唯一优势是换电，但 BaaS 版二手比买断低 3–5 万。</td></tr>
+        <tr><td>智界 R7 Max+ 长续航（28.98 万）</td><td>855km + 100kWh 是全场最长续航之一，ADS 5 双激光雷达也强。但<b>城市 NCA 需另购高阶包（3.2–3.6 万）</b>，加完落地 34.4–34.8 万；且空悬只有 31.98 万的 Ultra 才标配。等于用 i8 的钱买一台五座。</td></tr>
+        <tr><td>特斯拉 Model Y 长续航后驱（28.85 万）</td><td>821km、保值率三年 53.9%（全池唯一有三年数据的车型）、超充 2,600+ 站。但<b>400V 平台、无空悬、无激光雷达、FSD 另付 6.4 万</b>，同价配置最素。它赢在长期确定性，输在当期体验。</td></tr>
+        <tr><td>尚界 H5</td><td>不参与主排序，降到 05 节与 L05 单独对标。核心问题：<b>17.98 万的 Pro 长续航无激光雷达、不支持城市 NCA</b>；上到 19.98 万 Max+ 长续航（带 192 线激光雷达）后，城市 NCA 仍是<b>购车后另付的软件包（媒体口径约 2 万级，另有 3.6 万/优惠 3.2 万一套口径，官网均未公示）</b>，落地 23.5–24.7 万——与海狮 08 EV 900（25.8 万）相差仅 1–2 万，但让掉的是 1000V、双腔空悬、后轮转向与 900km。</td></tr>
+        <tr><td>小鹏 MONA L05（纯电版）</td><td>同样降到 05 节。6 款里 2 款增程出局，纯电剩 4 款，其中 560 Plus（13.98 万）无智驾芯片、只有 LCC。它不是差车，是"预算档"的车：15.98 万买到 635km + 图灵 750 仍然很值，但在 40 万框架里它不解决任何别人解决不了的问题。</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src-note">唐 L EV 停产依据：懂车帝 2026-04、易车 2026-10 报道全国门店停止新车订车；比亚迪官网 2026-10-27 仍展示该车型，两者冲突已保留。保值率口径见 06 节。</p>
+</section>
+
+<!-- 03 首选 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-no">03 / 三个首选</span>
+    <h2>为什么是它，放弃它你会失去什么</h2>
+  </div>
+
+  <div class="pick">
+    <div class="pick-h">
+      <span class="badge">首选 01</span>
+      <h4>小米 YU7 长续航版</h4>
+      <div class="pr">落地 27.2 万<small>裸车 25.35 万</small></div>
+    </div>
+    <div class="pick-b">
+      <div class="pb">
+        <div class="t">为什么是它</div>
+        <ul>
+          <li><b>续航是真的：</b>CLTC 835km，汽车之家直播实测表显归零 756km、含隐藏电量 784km，达成率 93.9%——这是全池唯一接近"标多少跑多少"的车。</li>
+          <li><b>智驾硬件一步到位：</b>全系 Thor-U 700 TOPS + 1 颗激光雷达 + 4D 毫米波，HAD（价值 2.6 万）终身使用权随车，城市 NOA 标配不订阅。不存在"入门版砍硬件"。</li>
+          <li><b>长期最稳：</b>一年保值率 82.3%，纯电车型连续 4 个月第一。5–8 年后卖车，这 6 个点以上的差距比任何配置都值钱。</li>
+          <li><b>装载实用：</b>660L 后备厢 + 141L 前备厢，五座里仅次于海狮 08。</li>
+        </ul>
+      </div>
+      <div class="pb give">
+        <div class="t">放弃它，你会失去</div>
+        <ul>
+          <li><b>空悬：</b>只有 27.99 万的 Pro 起才有闭式双腔空簧 + CDC；长续航版是普通悬架，CDC 还需选装。想要空悬，预算要到 29.9 万落地。</li>
+          <li><b>六座：</b>全系五座，没有第三排选项。</li>
+          <li><b>头部空间：</b>车高 1,608mm、溜背造型，后排头部不如海狮 08 的 1,800mm。</li>
+          <li><b>即刻提车：</b>长续航版交付 7–10 周，急用车只能看库存车。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pick-f"><b>谁该买：</b>三口/四口之家、五座够用、每年跑 2 次以上 500km 长途、没有家充也能接受（835km + 800V 补能，一周一充足够）。<b>谁不该买：</b>必须六座、或一定要空悬的人——这两条它会直接让你失望。</div>
+  </div>
+
+  <div class="pick">
+    <div class="pick-h">
+      <span class="badge">首选 02</span>
+      <h4>比亚迪 海狮 08 EV 900 五座尊荣</h4>
+      <div class="pr">落地 25.8 万<small>裸车 23.99 万</small></div>
+    </div>
+    <div class="pick-b">
+      <div class="pb">
+        <div class="t">为什么是它</div>
+        <ul>
+          <li><b>补能是碾压级：</b>1000V 平台，官方 10–70% 5 分钟、10–97% 9 分钟。这是全池最快的补能，且是<b>最便宜的一台 1000V 车型</b>。</li>
+          <li><b>底盘规格越级：</b>云辇-A 闭式双腔空悬 + 整体式后轮转向 ±7°（转弯半径 4.95m），这两项在 24 万级只有它给。</li>
+          <li><b>质保最长：</b>整车 6 年/15 万 + 首任非营运三电终身（每 12 个月 ≤5 万公里）。5–8 年持有的确定性，全池第一。</li>
+          <li><b>五座装载最大：</b>5115mm / 3030mm 轴距，后备厢 943–1881L，前备厢 201L。</li>
+        </ul>
+      </div>
+      <div class="pb give">
+        <div class="t">放弃它，你会失去</div>
+        <ul>
+          <li><b>智驾算力垫底：</b>Orin-X 254 TOPS + 1 颗激光雷达。比亚迪 2026-05 已发布自研璇玑 A3（三芯 2,100+ TOPS），硬件代差明确；官方承诺"新老 OTA 同权"，功能不会停更，但天花板低。</li>
+          <li><b>没有六座以外的灵活：</b>六座版后备厢只有 317L，满员出行装载紧张——所以只推荐五座。</li>
+          <li><b>座舱偏保守：</b>菜单层级深、娱乐 App 少，后排隔音一般（仅前排双层夹胶）。</li>
+          <li><b>没有现金优惠：</b>正价销售，落地价就是 25.8 万，谈不下来。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pick-f"><b>谁该买：</b>把"补能快、开 8 年不操心、底盘舒服"排在智驾前面的人；有家充但常跑高速、对服务区排队零容忍的人。<b>谁不该买：</b>把城市智驾当第一需求的人——254 TOPS 会是它 5 年后最明显的短板。</div>
+  </div>
+
+  <div class="pick">
+    <div class="pick-h">
+      <span class="badge">首选 03</span>
+      <h4>理想 i8 2026 后驱长续航</h4>
+      <div class="pr">落地 33.2 万<small>裸车 30.98 万</small></div>
+    </div>
+    <div class="pick-b">
+      <div class="pb">
+        <div class="t">为什么是它</div>
+        <ul>
+          <li><b>六座 + 长续航的唯一交集：</b>780km（后驱）、800V/5C、双腔魔毯空悬、三排可坐成人。六座车里没有第二台同时满足这四项。</li>
+          <li><b>补能闭环：</b>自营超充 4,212 座、高速近 1,400 座，5C 桩 10–80% 约 11 分钟。跑长途的确定性比参数表更重要。</li>
+          <li><b>后驱版省 3 万：</b>四驱高性能 33.98 万（落地 36.4 万，零百 4.5s），你说四驱可有可无——后驱版零百官方未单独公布，但足以覆盖日常与高速超车，这 3 万该省。</li>
+        </ul>
+      </div>
+      <div class="pb give">
+        <div class="t">放弃它，你会失去</div>
+        <ul>
+          <li><b>5.8 万溢价：</b>比 L90 六座 Pro 贵 4.8 万、比 YU7 贵 6 万。这笔钱买的是六座舒适 + 780km + 5C，不是配置数量。</li>
+          <li><b>后备厢：</b>六座满员 394L，比海狮六座（317L）好，但远不如 L90（430L + 下沉 106L）。</li>
+          <li><b>智驾贬值风险最高：</b>Thor-U 700 TOPS，而自家 2026 款 L8 已换自研马赫 M100 双芯 <b>2,560 TOPS</b>，差 3.6 倍，且官方未承诺老车主获得 M100 级能力。</li>
+          <li><b>纯电无兜底：</b>没有增程选项，冬季高速 + 无桩场景容错率低（四驱实测达成率 75.4%/70%）。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pick-f"><b>谁该买：</b>三排每周至少用 2 次、乘客是成人、有家充、常走高速干线。<b>不要买：</b>i8 Pro（32.18 万，只有 128 TOPS、城市 NOA 待 OTA）和 2025 Ultra（36.98 万，与 33.98 万同硬件）。</div>
+  </div>
+</section>
+
+<!-- 04 原三台位置 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-no">04 / 原三台位置变化</span>
+    <h2>谁升、谁降、谁出局</h2>
+    <span class="note">新约束：纯电优先 · 40 万落地 · 四驱不计分</span>
+  </div>
+
+  <div class="mv">
+    <div class="mvc up">
+      <div class="tag">升 ↑</div>
+      <h4>比亚迪 海狮 08</h4>
+      <div class="pos">从"25 万级六座备选" → 综合第 2</div>
+      <p>纯电约束把它从"纯电/插混双线"的模糊定位里解放出来：<b>23.99 万的 EV 900 五座，是全池最便宜的 1000V + 空悬 + 后轮转向 + 三电终身</b>。上一版它的问题是"六座版后备箱只有 317L"，而新约束下五座版（943L）才是主力，这个短板直接消失。</p>
+      <p class="k">关键变化：推荐版本从"EV 900 六座 25.99 万"改为"<b>EV 900 五座 23.99 万</b>"，省 2 万，后备厢从 317L 变 943L。DM-i 四款全部出局。</p>
+    </div>
+
+    <div class="mvc down">
+      <div class="tag">降 ↓</div>
+      <h4>理想 i8</h4>
+      <div class="pos">从"35 万档唯一六座纯电" → 综合第 3，六座第 1</div>
+      <p>它的"唯一性"被两件事削弱：<b>乐道 L90 用 26.58 万提供了六座</b>（便宜 4.4 万），<b>小米 YU7 用 25.35 万提供了更强的智驾硬件与保值率</b>（便宜 5.6 万）。i8 现在必须靠"780km + 5C + 魔毯空悬 + 三排舒适"证明这 5 万差价。</p>
+      <p class="k">位置没塌，但推荐版本变了：从四驱高性能 33.98 万改为<b>后驱长续航 30.98 万</b>——你说四驱可有可无，这 3 万不该花。</p>
+    </div>
+
+    <div class="mvc out">
+      <div class="tag">出局 →</div>
+      <h4>小鹏 MONA L05</h4>
+      <div class="pos">从"15 万档唯一答案" → 退出主表，降到 05 节</div>
+      <p>两个原因：<b>① 增程版直接出局</b>（1310 Max / 1310 Ultra SE 不再参与），纯电只剩 560 Plus / 535 Max / 635 Max / 635 Ultra SE，其中 560 Plus 无智驾芯片；<b>② 同价位出现正面竞品</b>——尚界 H5 纯电 Pro 长续航 17.98 万，直接对打 L05 635 Max 15.98 万。</p>
+      <p class="k">它没有变差，是"预算档"这个位置在 40 万框架里不成立：多花 8 万买海狮 08 EV，续航 +265km、补能从 3C 变 1000V、加空悬与后轮转向。这 8 万很难省。</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>被淘汰的是版本，不是整车：</b>L05 的 1310 增程两款、海狮的 DM-i 四款、尚界 H5 的增程两款在"纯电优先"下全部出局；版本层面 L05 560 Plus（无智驾芯片）、i8 Pro（128 TOPS + 城市 NOA 待 OTA）、i8 2025 Ultra（比 2026 款贵 3 万、硬件相同）都不要买。
+  </div>
+</section>
+
+<!-- 05 H5 vs L05 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-no">05 / 直接对标</span>
+    <h2>尚界 H5 vs 小鹏 MONA L05：17 万档怎么选</h2>
+    <span class="note">同价位、同为纯电/增程双动力、同为大五座</span>
+  </div>
+
+  <p class="lead">这是本次唯一一组"真正的同价位竞品"：<b>L05 635 Max 15.98 万（权益价）对尚界 H5 纯电 Pro 长续航 17.98 万</b>。两者价差 2 万，取向完全相反——一个把钱花在空间和补能，一个把钱花在座舱和品牌。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>项目</th><th>小鹏 MONA L05 635 Max</th><th>尚界 H5 纯电 Pro 长续航</th><th>尚界 H5 纯电 Max+ 长续航</th></tr></thead>
+      <tbody>
+        <tr><td>价格（指导 / 当期）</td><td class="num">16.48 / <b>15.98</b>（权益至 12-15）</td><td class="num"><b>17.98</b>（无现金减免）</td><td class="num"><b>19.98</b></td></tr>
+        <tr><td>车身 / 轴距（mm）</td><td class="num hl-t">4870×1930×1636 / <b>2940</b></td><td class="num">4780×1910×1664 / 2840</td><td class="num">同左</td></tr>
+        <tr><td>后备厢 / 前备厢（L）</td><td class="num hl-t">702–1913 / 102</td><td class="num">601–1837 / <b>124</b>（电动）</td><td class="num">同左</td></tr>
+        <tr><td>电池 / CLTC</td><td class="num">71.1kWh 磷酸铁锂 / 635km</td><td class="num"><b>80kWh 三元锂</b> / 655km</td><td class="num">80kWh / 640km</td></tr>
+        <tr><td>平台与补能</td><td class="num hl-t"><b>3C</b>，30–80% ≥15.8min</td><td class="num warn">400V，30–80% 官方约 30min<br>易车实测 29min、平均功率仅 <b>78.9kW</b></td><td class="num warn">同左（400V）</td></tr>
+        <tr><td>智驾硬件</td><td class="num">图灵 ×1，<b>750 TOPS</b>，无激光雷达</td><td class="num warn">ADS 5 基础版，<b>无激光雷达</b><br>仅高速 NCA，<b>不支持城市 NCA</b></td><td class="num">ADS 5 高阶版，<b>192 线激光雷达</b><br>城市 NCA 需另购</td></tr>
+        <tr><td>城市智驾费用</td><td class="hl-t">标配，0 元</td><td class="warn">不提供</td><td class="warn">高阶软件包另购<br>约 2 万级 / 3.2 万（两套口径）</td></tr>
+        <tr><td>底盘</td><td class="num">麦弗逊 + 五连杆，DCC 可变阻尼</td><td class="num warn">麦弗逊 + 五连杆，<b>无 CDC、无空悬</b></td><td class="num warn">同左</td></tr>
+        <tr><td>座舱</td><td>17.3″ 单屏，无物理按键</td><td class="hl-t">15.6″ 中控 + 15.6″ 副驾屏 + 26.1″ HUD，鸿蒙座舱</td><td class="hl-t">同左</td></tr>
+        <tr><td>质保</td><td class="num hl-t">整车 <b>5 年/12 万</b>，三电 8 年/16 万</td><td class="num">整车 4 年/10 万，<b>首任三电终身</b></td><td class="num">同左</td></tr>
+        <tr><td>落地估算</td><td class="num hl-t">17.3–17.4 万</td><td class="num">19.4–19.5 万</td><td class="num">21.6–21.7 万<br>+ 软件包 2–3.2 万 → <b>23.5–24.7</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3><span class="dot"></span>判断：三种人，三个答案</h3>
+  <p><b>① 预算 16–18 万、五座、要城市智驾 → 选 L05 635 Max。</b>它轴距长 100mm、后备厢大 101L、3C 补能快一倍，并且城市 NGP 是标配、不收费。H5 Pro 长续航多花 2 万，买到的是一块副驾屏和一个华为标，但<b>买不到城市智驾</b>——这是硬伤，不是偏好。</p>
+  <p><b>② 预算 18–20 万、座舱体验与生态优先 → 选 H5 Pro 长续航。</b>鸿蒙座舱 + 双 15.6″ 屏 + 26.1″ HUD 的体验确实领先 L05 一个代际；三电终身质保也比 L05 的 8 年/16 万更长。代价是接受 4780mm 的车身、400V 的补能速度，以及没有城市 NCA。</p>
+  <p><b>③ 想要华为城市智驾 → 上到 Max+ 长续航，但先想清楚你要买的是什么。</b>19.98 万 + 高阶软件包 = <b>落地 23.5 万（约 2 万包口径）到 24.7 万（3.2 万包口径）</b>。这个价位上它和海狮 08 EV 900 五座（25.8 万）只差 1–2 万，是一组真实的二选一：<b>选 H5 = 买华为城市 NCA + 鸿蒙座舱，代价是 400V、无空悬、无后轮转向、640km；选海狮 = 买 1000V 9 分钟补能、双腔空悬、后轮转向、900km、三电终身，代价是 254 TOPS 的智驾天花板。</b>如果你把"城市里能不能脱手"排在第一位，H5 是 25 万以内唯一的华为城市 NCA 入口；如果你把"开 8 年省不省心"排第一，海狮赢。</p>
+  <p class="src-note">尚界 H5 纯电共 4 个版本：Pro 16.58 万（64.6kWh LFP / 535km / 150kW）、Pro 长续航 17.98 万（80kWh 三元 / 655km / 180kW）、Max+ 18.58 万（64.6kWh / 525km / <b>带 192 线激光雷达</b>）、Max+ 长续航 19.98 万（80kWh / 640km / 带激光雷达）。本节对标选 Pro 长续航，因为它是唯一与 L05 635 Max 续航对等的版本；16.58 万的 Pro 便宜 1.4 万但只有 535km，续航不在一个档。你提供的"15.98 万起"实为<b>增程 Pro</b>，"16.98 万预售"也非当前纯电在售价——纯电在售起价是 <b>16.58 万</b>。</p>
+
+  <div class="callout">
+    <b>预算充足时，这两台该不该直接跳过？——该。</b>如果你没有"≤18 万"这个硬约束，YU7 长续航（27.2 万落地）相比 L05 635 Max 多花约 9.9 万，换来的是续航 +200km、智驾从 750 TOPS 纯视觉升级到 700 TOPS + 激光雷达、二手残值从"品牌未入榜"变成"一年 82.3%"。<b>唯一例外</b>：家里已有主力车、这台只做市区通勤、年里程低于 1 万公里——这时 L05 省下的 10 万，够覆盖 8 年电费、保险和保养，跳过的理由不成立。
+  </div>
+</section>
+
+<!-- 06 长期 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-no">06 / 5–8 年</span>
+    <h2>长期持有时，参数表会失效的三件事</h2>
+  </div>
+
+  <p class="lead">开到第 5 年，续航和加速都不再重要，真正决定你"还想不想开、卖不卖得掉"的是：<b>整车质保还剩几年、智驾硬件落后了几代、以及那些每月自动扣款的订阅</b>。这三项在买车当天几乎没人算。</p>
+
+  <h3><span class="dot"></span>6.1 质保：4 年和 6 年，差的是第 5 年的一次空悬维修</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>车型</th><th class="num">整车质保</th><th class="num">三电质保</th><th>8 年持有视角</th></tr></thead>
+      <tbody>
+        <tr><td>比亚迪 海狮 08 EV</td><td class="num hl-t">6 年 / 15 万</td><td class="num hl-t">首任非营运<b>终身</b>（≤5 万 km/年）</td><td>全池最强，空悬不在终身范围内</td></tr>
+        <tr><td>极氪 7X</td><td class="num hl-t">6 年 / 15 万*</td><td class="num">首任终身*</td><td>*官网配置表未单列，按品牌通用政策，下单前需复核</td></tr>
+        <tr><td>理想 i8</td><td class="num">5 年 / 10 万</td><td class="num">8 年 / 16 万</td><td>唯一写明电池衰减承诺：1,500 次循环后 SOH ≥80%</td></tr>
+        <tr><td>小鹏 G9 / L05</td><td class="num">5 年 / 12 万</td><td class="num">8 年 / 16 万</td><td>中规中矩</td></tr>
+        <tr><td>小米 YU7</td><td class="num">4 年 / 10 万*</td><td class="num">8 年 / 16 万*</td><td>*配置表未单列，按小米通用政策，需 App 内复核</td></tr>
+        <tr><td>乐道 L90</td><td class="num warn">4 年 / 10 万</td><td class="num">8 年 / 16 万</td><td class="warn">全池最短：第 5 年起空悬、电控自费</td></tr>
+        <tr><td>蔚来 ES6</td><td class="num warn">4 年 / 10 万</td><td class="num">8 年 / 16 万</td><td class="warn">同上，且 BaaS 版二手低 3–5 万</td></tr>
+        <tr><td>尚界 H5</td><td class="num warn">4 年 / 10 万</td><td class="num hl-t">首任三电终身</td><td>三电长、整车短</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3><span class="dot"></span>6.2 保值率：只有 Model Y 有三年数据，其余都是"一年期"</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>车型</th><th class="num">一年保值率</th><th class="num">三年保值率</th><th>口径提醒</th></tr></thead>
+      <tbody>
+        <tr><td>小米 YU7</td><td class="num hl-t">82.3%（纯电第一）</td><td class="dim">无（上市未满两年）</td><td>流通协会 × 精真估 B2C 口径，2026-10</td></tr>
+        <tr><td>乐道 L90</td><td class="num">76.4–78%</td><td class="dim">无</td><td class="warn">天天拍车 C2B 口径仅 68.6%，两套口径差 8–10 个点</td></tr>
+        <tr><td>蔚来 ES6</td><td class="num">74.5%</td><td class="num">46–55%</td><td class="warn">BaaS 版一年约 69%，且买断比 BaaS 二手高 3–5 万</td></tr>
+        <tr><td>特斯拉 Model Y</td><td class="num">73.7%</td><td class="num hl-t">53.9%</td><td>全池唯一有可信三年数据的车型</td></tr>
+        <tr><td>极氪 7X</td><td class="num">72.5%</td><td class="dim">无</td><td>中型纯电 SUV 中国品牌第一</td></tr>
+        <tr><td>理想 i8 / 海狮 08 / G9 / R7 / H5</td><td class="dim" colspan="2">车型级 1 年/3 年数据均未找到（上市均不足 13 个月）</td><td>品牌级参考：理想三年 47.0%、比亚迪三年 49.1%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src-note">必须说清楚：除 Model Y（三年 53.9%）与蔚来（三年 46–55%）外，本报告没有任何一台车有可信的三年保值率。任何"这台车三年保值 XX%"的说法目前都无车型级数据支撑，只能用一年期数据与品牌级趋势推断。乐道 L90 的两套口径相差 8–10 个百分点，是本次最需要注意的口径冲突。</p>
+
+  <h3><span class="dot"></span>6.3 智驾贬值与订阅：8 年能差出 3–6 万</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>车型</th><th>智驾硬件</th><th>迭代风险</th><th class="num">8 年软件成本</th></tr></thead>
+      <tbody>
+        <tr><td>小米 YU7</td><td>Thor-U 700 TOPS + 激光雷达，全系标配</td><td class="hl-t">低：硬件一步到位，HAD 终身随车</td><td class="num hl-t">0 元</td></tr>
+        <tr><td>小鹏 G9 / L05</td><td>图灵 750 / 可选双芯 1500</td><td class="warn">中：新老 OTA 不同权（G9 老 Orin 无换装政策）</td><td class="num">0 元（城市 NGP 标配）</td></tr>
+        <tr><td>理想 i8</td><td>Thor-U 700 TOPS</td><td class="warn">高：自家新款 2,560 TOPS，差 3.6 倍，无升级承诺</td><td class="num">0 元</td></tr>
+        <tr><td>比亚迪 海狮 08</td><td>Orin-X 254 TOPS + 激光雷达</td><td>中：算力垫底，但官方承诺新老 OTA 同权</td><td class="num">0 元</td></tr>
+        <tr><td>极氪 7X</td><td>Thor-U 700 TOPS + 激光雷达</td><td class="hl-t">低：2026 款已标配激光雷达与城市 NZP</td><td class="num">0 元</td></tr>
+        <tr><td>乐道 L90</td><td>Pro 用 Orin-X；Max+ 起神玑 NX9031</td><td>中：芯片型号官方未明示</td><td class="num warn">全场景 NOA 320 元/月 → <b>3.07 万</b></td></tr>
+        <tr><td>蔚来 ES6</td><td>神玑 NX9031（508 TOPS）+ 1 激光雷达</td><td>中：硬件够用，但下一代时间表未公开</td><td class="num warn">NAD 完整版 680 元/月 → <b>6.53 万</b></td></tr>
+        <tr><td>智界 R7 / 尚界 H5</td><td>ADS 5，Max+ 起双激光雷达（H5 为 1 颗 192 线）</td><td>中：ADS 4→5 免费 OTA，但 ADS 2.0/3.0 老车被排除</td><td class="num warn">高阶包一次性 <b>2 万级 – 3.6 万</b>（口径不一）</td></tr>
+        <tr><td>特斯拉 Model Y</td><td>AI4 720 TOPS，纯视觉 8 摄像头</td><td class="warn">中：HW4→HW5 无升级政策</td><td class="num warn">FSD <b>6.4 万</b>（EAP 3.2 万）</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <b>这张表最值钱的结论：</b>同为 5–8 年持有，蔚来 ES6 的订阅制会比 YU7 多花 <b>6.5 万</b>，乐道 L90 多花 <b>3.1 万</b>，智界 R7 / 尚界 H5 要一次性付 <b>2–3.6 万</b>。这些钱不体现在车价里，但会体现在你的用车总成本里。<b>"城市 NOA 标配且免费"在长期视角下是硬价值，不是营销话术。</b>
+  </div>
+
+  <div class="callout blue">
+    <b>关于 BaaS / 换电的长期账：</b>乐道官方自己算过——<b>6 年内换车，BaaS 总成本低于买断；第 7 年起月租累积反超，买断更优</b>。你计划持有 5–8 年，正好卡在分界线上：<b>偏 5 年可以 BaaS，偏 8 年必须买断</b>。另外二手市场有实锤：同年份 ES6，买断版比 BaaS 版成交价高 3–5 万，BaaS 车龄超 4 年后基本只能卖回官方。
+  </div>
+</section>
+
+<!-- 07 口径 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-no">07 / 官方 vs 实测</span>
+    <h2>续航这件事，只有两台车经得起核对</h2>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>车型</th><th>官方 CLTC</th><th>实测 / 车主</th><th>差距</th></tr></thead>
+      <tbody>
+        <tr><td>小米 YU7 长续航</td><td class="num">835km</td><td class="hl-t">汽车之家直播实测 756km（归零）/ 784km（含隐藏电量），<b>达成率 93.9%</b></td><td class="hl-t">仅差 6%，全池最好</td></tr>
+        <tr><td>比亚迪 海狮 08 EV 900</td><td class="num">900km</td><td class="warn">第三方独立高速实测稿尚未出现（上市不足 3 个月）</td><td class="dim">无法核对</td></tr>
+        <tr><td>理想 i8（四驱 720）</td><td class="num">720km</td><td>懂车帝综合 75.44%（543.2km）；易车高速 <b>70%</b></td><td class="warn">高速低 25–30 个百分点</td></tr>
+        <tr><td>乐道 L90（85kWh）</td><td class="num">600km</td><td>车主高速 100–110km/h 实际 <b>370–400km（62–67%）</b>；开空调约 470km</td><td class="warn">高速达成率全池最低区间</td></tr>
+        <tr><td>极氪 7X 103kWh</td><td class="num">802km</td><td>车主 14.5kWh/100km（杭州 4,018km）；冬季约 480km</td><td>冬季衰减明显</td></tr>
+        <tr><td>小鹏 G9 725</td><td class="num">725km</td><td>625 版车主"打 85 折跑 530km"，电耗 16–17kWh</td><td>约 85 折</td></tr>
+        <tr><td>智界 R7 855 版</td><td class="num">855km</td><td>车主综合 14.2kWh，城区低至 11.5kWh，<b>达成率 82%</b></td><td>表现中上</td></tr>
+        <tr><td>特斯拉 Model Y 后驱</td><td class="num">593km</td><td class="warn">26 位车主平均 <b>415km（70%）</b>；冬季 300–330km</td><td class="warn">"官标打 7 折"口碑成立</td></tr>
+        <tr><td>尚界 H5 纯电</td><td class="num">655km / 官方 30–80% 约 30min</td><td class="warn">易车实测高速 229.1km 掉 50% 电；<b>30–80% 用 29 分钟、平均功率仅 78.9kW</b></td><td class="warn">400V 架构，补能是硬伤</td></tr>
+        <tr><td>蔚来 ES6 100kWh</td><td class="num">630–650km</td><td>车主市区 16.4kWh/100km，实际约 480km</td><td>约 75 折</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src-note">结论很直接：<b>CLTC 的折扣率差异比 CLTC 数字本身更重要</b>。YU7 的 835km 打到 93.9% 仍剩 756km，实际比 i8 的 720km 打到 75% 剩 543km 多出 213km。海狮 08 的 900km 目前没有第三方数据，按同级 1000V 车型的表现推断应在 75–80%，但这只是推断，未做估算填充。</p>
+</section>
+
+<!-- 08 决策 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-no">08 / 决策表</span>
+    <h2>对着条件打勾，答案只有一个</h2>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>你的条件</th><th>答案</th></tr></thead>
+      <tbody>
+        <tr><td>五座够用，要最长的真实续航 + 最强的长期保值</td><td class="hl-t">小米 YU7 长续航版（落地 27.2 万）</td></tr>
+        <tr><td>五座够用，要最快补能 + 最长质保 + 空悬后轮转向</td><td class="hl-t">海狮 08 EV 900 五座（落地 25.8 万）</td></tr>
+        <tr><td>三排每周用 ≥2 次且坐成人，要最好的六座舒适</td><td class="hl">理想 i8 2026 后驱长续航（落地 33.2 万）</td></tr>
+        <tr><td>要六座但预算压到 30 万内，能接受 600km 续航</td><td>乐道 L90 六座 Pro（落地 28.4 万，建议买断）</td></tr>
+        <tr><td>要六座 + 满载跑长途 + 经常走高速</td><td class="hl">理想 i8（L90 高速实测仅 370–400km，不够用）</td></tr>
+        <tr><td>预算 26 万内，想要激光雷达 + 700 TOPS</td><td>极氪 7X 103kWh 后驱（落地 25.0–26.8 万）</td></tr>
+        <tr><td>预算 27 万内，必须空悬，能接受纯视觉</td><td>小鹏 G9 725 Max（权益后约 26.0 万）</td></tr>
+        <tr><td>把保值率与超充网络排第一，能接受配置最素</td><td>Model Y 长续航后驱（落地 30.9 万）</td></tr>
+        <tr><td>预算 ≤18 万，要城市智驾 + 大空间</td><td>MONA L05 635 Max（落地 17.3 万）</td></tr>
+        <tr><td>裸车 ≤18 万，要鸿蒙座舱与副驾屏</td><td>尚界 H5 纯电 Pro 长续航（落地 19.4 万，无城市 NCA）</td></tr>
+        <tr><td>想买华为城市智驾，预算 20–25 万</td><td>尚界 H5 纯电 Max+ 长续航（落地 23.5–24.7 万，含软件包）；若更看重补能与底盘，同价改买海狮 08 EV 900</td></tr>
+        <tr><td>六人常年满员 + 大件行李</td><td class="warn">主表六台都不合适，改看 MPV</td></tr>
+        <tr><td>看到 32.18 万的 i8 Pro / 36.98 万的 i8 2025 Ultra</td><td class="warn">不要买：前者 128 TOPS 且城市 NOA 待 OTA，后者同硬件贵 3 万</td></tr>
+        <tr><td>看到 23.98 万的唐 L EV 现车优惠</td><td class="warn">不建议：已停产清库存，OTA 与配件周期不可控</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 09 来源 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-no">09 / 来源与缺口</span>
+    <h2>数据来源</h2>
+  </div>
+
+  <div class="sources">
+    <p><b>价格与参数</b><br>小米官网配置页（xiaomiev.com）、乐道官网配置表与新闻（onvo.cn）、极氪/懂车帝配置页、小鹏官网 G9 2026 配置表、鸿蒙智行官网（智界 R7 / 尚界 H5）、特斯拉中国（tesla.cn）、比亚迪官网唐 L EV 页、蔚来官网 ES6 配置页。</p>
+    <p><b>实测续航</b><br>汽车之家 YU7 直播实测（2025-06-28）；懂车帝 YU7 深度测评；懂车帝/汽车之家 L90 车主众测；汽车之家极氪 7X 众测；汽车之家 G9 小改款实测；易车尚界 H5 实测（2025-10-22）。</p>
+    <p><b>实测续航</b><br>新浪/易车 Model Y 车主汇总（2026-09/10）；智界 R7 车主论坛实测（2026-11-03）；蔚来 ES6 车主汇总（2026-09）。</p>
+    <p><b>保值率</b><br>中国汽车流通协会 × 精真估月度保值率报告（2026-08/09/10）；天天拍车 C2B 口径（2026-09）；全国工商联汽车经销商商会 2026 Q2 报告；网通社二手行情。</p>
+    <p><b>车主口碑</b><br>汽车之家口碑/质量页、懂车帝车友圈、易车点评、车质网（各车型投诉编号见底稿）。</p>
+    <p><b>交付与终端</b><br>有驾/懂车帝 YU7 交付口径（2026-05）；乐道官网交付新闻；小鹏金融页与经销商权益（2026-10）；特斯拉中国 10-30 至 11-30 活动；易车经销商唐 L EV 库存页。</p>
+    <p><b>智驾迭代</b><br>理想官网 L8 页（马赫 M100 双芯 2,560 TOPS）；小鹏官方推送公告；有驾/36氪 华为 ADS 4→5 升级政策与高阶包价格；小米 2026-03 换代 SU7 硬件策略报道。</p>
+    <p><b>补能</b><br>蔚来 NIO Power（4,244 座换电站，2026-11-09）；乐道官网 BaaS 算账文（2026-08）；特斯拉中国超充数据（2026-06）；小鹏 IR 财报稿（2026-10）；小米充电页。</p>
+    <p><b>税与政策</b><br>财政部/税务总局/工信部公告 2023 年第 10 号；国家税务总局广西局答复（2026-08-27）；中国政府网（2026-01-01）。</p>
+  </div>
+
+  <div class="callout" style="margin-top:26px;">
+    <b>明确的数据缺口（不补、不估算）：</b>① 海狮 08 EV 的第三方独立高速续航实测；② 乐道 L90 900V 平台的实测峰值功率与 10–80% 耗时；③ 乐道 L90 的智驾芯片具体型号；④ 极氪 7X / Model Y / 智界 R7 的 2026-11 具体等车周数（Model Y 仅知长续航 5–7 周）；⑤ 小鹏 G9、智界 R7、唐 L EV、尚界 H5、i8、海狮 08 的车型级保值率；⑥ 12 台车的公开保险报价区间（本报告保险均为估算）；⑦ 尚界 H5 售后网点（上汽渠道 vs 华为门店）密度对比；⑧ 小米 YU7 三年保值率（上市未满两年）。
+  </div>
+</section>
+
+</main>
+
+<div class="closing">
+  <div class="wrap">
+    <div class="kicker">FINAL TAKE</div>
+    <h2>如果只能记三句话</h2>
+    <div class="grid">
+      <div class="item">
+        <div class="t">五座，预算 27 万</div>
+        <p>买 YU7 长续航。它的 835km 是真能跑出来的 756km，它的 700 TOPS + 激光雷达是全系标配，它的一年保值率 82.3% 是全池第一。这三件事同时成立的车，只有这一台。</p>
+      </div>
+      <div class="item">
+        <div class="t">五座，预算 26 万，更看重开 8 年</div>
+        <p>买海狮 08 EV 900 五座。9 分钟补能、双腔空悬、后轮转向、三电终身，25.8 万落地。它的短板只有智驾算力，如果你不把城市 NOA 当刚需，它就是最耐用的选择。</p>
+      </div>
+      <div class="item">
+        <div class="t">六座，预算 33 万</div>
+        <p>买 i8 后驱长续航，不要买 Pro、不要买 Ultra、不要加四驱。它是六座里唯一同时有 780km、5C 和三排舒适的车；但也要接受它的智驾硬件已被自家新款拉开 3.6 倍。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    数据截止 2026-11-09｜价格为官方指导价或当期权益价，落地价含购置税（减半、上限 1.5 万）与保险估算，不含地方补贴与经销商议价｜续航均为 CLTC，实测差异见 07 节｜保值率除 Model Y 三年 53.9%、蔚来三年 46–55% 外均为一年期或品牌级｜本报告为条件式分析，不构成购买建议，下定前请以门店报价与当地政策为准。
+  </div>
+</footer>
+
+</body>
+</html>
